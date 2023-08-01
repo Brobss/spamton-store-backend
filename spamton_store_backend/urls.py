@@ -7,11 +7,12 @@ from produto import views
 
 from rest_framework.routers import DefaultRouter
 
-from produto.views import CategoriaViewSet, ProdutoViewSet
+from produto.views import CategoriaViewSet, ProdutoViewSet, ImagemViewSet
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"produtos", ProdutoViewSet)
+router.register(r"imagens", ImagemViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
