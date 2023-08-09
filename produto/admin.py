@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Categoria, Produto, Imagem
+from .models import Categoria, Produto, Imagem, Fabricante
 
 
 class ImagemAdmin(admin.StackedInline):
@@ -13,7 +13,12 @@ class ProdutoAdmin(admin.ModelAdmin):
     class Meta:
         model = Produto
 
+class FabricanteAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Fabricante
+
 
 admin.site.register(Categoria)
 admin.site.register(Produto, ProdutoAdmin)
 admin.site.register(Imagem)
+admin.site.register(Fabricante, FabricanteAdmin)
