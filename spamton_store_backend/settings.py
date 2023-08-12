@@ -15,7 +15,7 @@ SECRET_KEY = "django-insecure-!_=uz-udyf2ph0f-%ch9c42xxs_l%x2en=8ozsfv&%n!cppjyu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -28,8 +28,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
+    "rest_framework_simplejwt",
     "rest_framework",
     "produto",
+    "usuario",
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+
+AUTH_USER_MODEL = "usuario.Usuario"

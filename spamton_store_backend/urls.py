@@ -7,7 +7,19 @@ from produto import views
 
 from rest_framework.routers import DefaultRouter
 
-from produto.views import CategoriaViewSet, ProdutoViewSet, ImagemViewSet, FabricanteViewSet
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+from produto.views import (
+    CategoriaViewSet,
+    ProdutoViewSet,
+    ImagemViewSet,
+    FabricanteViewSet,
+)
+
+from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
@@ -18,4 +30,7 @@ router.register(r"fabricantes", FabricanteViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(router.urls)),
+    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/", include(usuario_router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
