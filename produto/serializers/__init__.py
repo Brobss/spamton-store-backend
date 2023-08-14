@@ -1,4 +1,4 @@
 from .categoria import CategoriaSerializer
 from .fabricante import FabricanteSerializer
 from .produto import ProdutoSerializer, ProdutoListSerializer
-from .imagem import ImagemSerializer
+""" from .imagem import ImagemSerializer """

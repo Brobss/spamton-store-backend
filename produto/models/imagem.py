@@ -1,4 +1,4 @@
-from django.db import models
+""" from django.db import models
 
 from .produto import Produto
 
@@ -22,4 +22,4 @@ class Imagem(models.Model):
         return self.imagem.name
 
     class Meta:
-        verbose_name_plural = "Imagens"
+        verbose_name_plural = "Imagens" """

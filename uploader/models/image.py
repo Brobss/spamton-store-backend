@@ -5,6 +5,8 @@ from django.db import models
 
 from utils.files import get_content_type
 
+from produto.models import Produto
+
 
 def image_file_path(image, _):
     extension = mimetypes.guess_extension(image.file.file.content_type)
@@ -14,6 +16,9 @@ def image_file_path(image, _):
 
 
 class Image(models.Model):
+    produto = models.ForeignKey(
+        Produto, on_delete=models.CASCADE, related_name="images", null=True, blank=True
+    )
     attachment_key = models.UUIDField(
         max_length=255,
         default=uuid.uuid4,

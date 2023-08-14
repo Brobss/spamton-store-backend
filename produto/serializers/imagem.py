@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+""" from rest_framework.serializers import ModelSerializer
 
 from produto.models import Imagem
 
@@ -6,4 +6,4 @@ from produto.models import Imagem
 class ImagemSerializer(ModelSerializer):
     class Meta:
         model = Imagem
-        fields = "__all__"
+        fields = "__all__" """

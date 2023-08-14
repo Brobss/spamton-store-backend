@@ -3,6 +3,8 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from uploader.router import router as uploader_router
+
 from produto import views
 
 from rest_framework.routers import DefaultRouter
@@ -15,16 +17,15 @@ from rest_framework_simplejwt.views import (
 from produto.views import (
     CategoriaViewSet,
     ProdutoViewSet,
-    ImagemViewSet,
     FabricanteViewSet,
 )
+
 
 from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"produtos", ProdutoViewSet)
-router.register(r"imagens", ImagemViewSet)
 router.register(r"fabricantes", FabricanteViewSet)
 
 urlpatterns = [
@@ -33,4 +34,5 @@ urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include(usuario_router.urls)),
+    path("api/media/", include(uploader_router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

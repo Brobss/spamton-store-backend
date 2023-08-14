@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "produto",
     "usuario",
+    "uploader",
 ]
 
 MIDDLEWARE = [
@@ -119,8 +120,10 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = "/media/"
+FILE_UPLOAD_PERMISSIONS = 0o640
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
