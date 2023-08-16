@@ -14,7 +14,6 @@ cupshelpers==1.0
 dbus-python==1.2.18
 defer==1.0.6
 distro==1.7.0
-distro-info==1.1+ubuntu0.1
 Django==4.2.4
 django-cors-headers==4.2.0
 django-rest-framework==0.1.0
@@ -56,7 +55,6 @@ pymacaroons==0.13.0
 PyNaCl==1.5.0
 pyparsing==2.4.7
 pyRFC3339==1.1
-python-apt==2.4.0+ubuntu2
 python-dateutil==2.8.1
 python-debian==0.1.43+ubuntu1.1
 python-magic==0.4.27
