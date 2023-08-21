@@ -9,7 +9,6 @@ class ImagemAdmin(admin.StackedInline):
 
 
 class ProdutoAdmin(admin.ModelAdmin):
-    inlines = [ImagemAdmin]
 
     class Meta:
         model = Produto

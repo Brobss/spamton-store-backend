@@ -5,6 +5,10 @@ from django.conf.urls.static import static
 
 from uploader.router import router as uploader_router
 
+from uploader import views
+
+from uploader.views import ImageUploadViewSet
+
 from produto import views
 
 from rest_framework.routers import DefaultRouter
@@ -35,4 +39,6 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include(usuario_router.urls)),
     path("api/media/", include(uploader_router.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

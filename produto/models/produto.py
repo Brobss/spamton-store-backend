@@ -18,6 +18,7 @@ class Produto(models.Model):
     )
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to="thumbnails/", blank=True, null=True)
+    imagens = models.ManyToManyField("uploader.Image", blank=True)
 
     def __str__(self):
         return self.nome

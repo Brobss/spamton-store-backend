@@ -16,9 +16,6 @@ def image_file_path(image, _):
 
 
 class Image(models.Model):
-    produto = models.ForeignKey(
-        Produto, on_delete=models.CASCADE, related_name="images", null=True, blank=True
-    )
     attachment_key = models.UUIDField(
         max_length=255,
         default=uuid.uuid4,
