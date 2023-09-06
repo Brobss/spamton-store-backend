@@ -30,8 +30,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework_simplejwt",
     "rest_framework",
-    "produto",
     "usuario",
+    "produto",
     "uploader",
 ]
 
@@ -125,13 +125,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = "/media/"
 FILE_UPLOAD_PERMISSIONS = 0o640
 
+
 REST_FRAMEWORK = {
-    #"DEFAULT_PERMISSION_CLASSES": [
+    # "DEFAULT_PERMISSION_CLASSES": [
     #    "rest_framework.permissions.DjangoModelPermissions",
-    #],
-    #"DEFAULT_AUTHENTICATION_CLASSES": (
+    # ],
+    # "DEFAULT_AUTHENTICATION_CLASSES": (
     #    "rest_framework_simplejwt.authentication.JWTAuthentication",
-    #),
+    # ),
 }
 
 AUTH_USER_MODEL = "usuario.Usuario"
