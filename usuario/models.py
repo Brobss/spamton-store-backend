@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
 
+from uploader.models import Image
+
 
 class Usuario(AbstractUser):
     username = None
@@ -13,6 +15,7 @@ class Usuario(AbstractUser):
     data_nascimento = models.DateField(
         _("Birth Date"), auto_now=False, auto_now_add=False, blank=True, null=True
     )
+    imagem_perfil = models.ImageField(upload_to="images/", blank=True, null=True)
 
     USERNAME_FIELD = "email"
 
