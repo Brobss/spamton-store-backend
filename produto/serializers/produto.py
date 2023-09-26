@@ -33,7 +33,7 @@ class ProdutoSerializer(ModelSerializer):
 class ProdutoListSerializer(ModelSerializer):
     class Meta:
         model = Produto
-        fields = ["id", "nome", "thumbnail", "preco", "promo", "precoPromo"]
+        fields = ["id", "nome", "thumbnail", "categoria", "fabricante", "preco", "promo", "precoPromo"]
         depth = 1
 
 
