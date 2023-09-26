@@ -29,8 +29,8 @@ from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
-router.register(r"produtos", ProdutoViewSet)
 router.register(r"fabricantes", FabricanteViewSet)
+router.register(r"produtos", ProdutoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -39,6 +39,6 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include(usuario_router.urls)),
     path("api/media/", include(uploader_router.urls)),
-] 
+]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
