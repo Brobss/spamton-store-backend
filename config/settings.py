@@ -1,6 +1,7 @@
 import os
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,12 +129,16 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 
 
 REST_FRAMEWORK = {
-    # "DEFAULT_PERMISSION_CLASSES": [
-    #    "rest_framework.permissions.DjangoModelPermissions",
-    # ],
-    # "DEFAULT_AUTHENTICATION_CLASSES": (
-    #    "rest_framework_simplejwt.authentication.JWTAuthentication",
-    # ),
+    "DEFAULT_PERMISSION_CLASSES": [
+       "rest_framework.permissions.DjangoModelPermissions",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+       "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=99999),
 }
 
 AUTH_USER_MODEL = "usuario.Usuario"
