@@ -22,6 +22,7 @@ from produto.views import (
     CategoriaViewSet,
     ProdutoViewSet,
     FabricanteViewSet,
+    CompraViewSet,
 )
 
 
@@ -31,6 +32,7 @@ router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"fabricantes", FabricanteViewSet)
 router.register(r"produtos", ProdutoViewSet)
+router.register(r"compras", CompraViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

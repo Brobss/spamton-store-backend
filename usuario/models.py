@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
 
-from uploader.models import Image
 
 
 class Usuario(AbstractUser):
