@@ -18,18 +18,14 @@ class FabricanteAdmin(admin.ModelAdmin):
     class Meta:
         model = Fabricante
 
+class ItensCompraInline(admin.TabularInline):
+    model = ItensCompra
+    
+
+class CompraAdmin(admin.ModelAdmin):
+    inlines = [ItensCompraInline]
 
 admin.site.register(Categoria)
 admin.site.register(Produto, ProdutoAdmin)
 admin.site.register(Fabricante, FabricanteAdmin)
-
-admin.site.register(Compra)
-
-
-class ItensCompraInline(admin.TabularInline):
-    model = ItensCompra
-
-
-# @admin.register(Compra)
-# class CompraAdmin(admin.ModelAdmin):
-#     inlines = [ItensCompraInline]
+admin.site.register(Compra, CompraAdmin)
