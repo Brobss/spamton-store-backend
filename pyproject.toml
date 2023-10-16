@@ -1,15 +1,42 @@
 [project]
-name = ""
-version = ""
+name = "Spamton-Store_Backend"
+version = "0.1"
 description = ""
 authors = [
     {name = "Brobss", email = "gabrieldomingos13@gmail.com"},
 ]
 dependencies = [
-    "Django>=4.2.6",
+    "django>=4.2.6",
     "django-rest-framework>=0.1.0",
+    "pillow>=10.1.0",
+    "django-cors-headers>=4.3.0",
+    "rest-framework-simplejwt>=0.0.2",
+    "django-extensions>=3.2.3",
+    "python-dotenv>=1.0.0",
+    "netifaces>=0.11.0",
+    "dotenv>=0.0.5",
 ]
+
+
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver 0.0.0.0:19003"
+runserver = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+shell = "python manage.py shell"
+test = "python manage.py test"
+startapp = "python manage.py startapp {args}"
+loaddata = "python manage.py loaddata {args}"
+dumpdata = "python manage.py dumpdata {args}"
+pre_dev = "python ./scripts/set_my_ip.py"
+
+[[tool.pdm.autoexport]]
+filename = "requirements.txt"
+without-hashes = "true"
+
 
