@@ -2,6 +2,7 @@
 # Please do not edit it manually.
 
 asgiref==3.7.2
+Brotli==1.1.0
 django==4.2.6
 django-cors-headers==4.3.0
 django-extensions==3.2.3
@@ -17,3 +18,4 @@ pytz==2023.3.post1
 rest-framework-simplejwt==0.0.2
 sqlparse==0.4.4
 typing-extensions==4.8.0
+whitenoise==6.6.0
