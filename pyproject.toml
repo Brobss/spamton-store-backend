@@ -1,0 +1,15 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Brobss", email = "gabrieldomingos13@gmail.com"},
+]
+dependencies = [
+    "Django>=4.2.6",
+    "django-rest-framework>=0.1.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
