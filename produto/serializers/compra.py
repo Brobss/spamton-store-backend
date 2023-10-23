@@ -7,12 +7,12 @@ class ItensCompraSerializer(ModelSerializer):
     class Meta:
         total = SerializerMethodField()
         model = ItensCompra
-        fields = ["livro", "quantidade"]
+        fields = ["produto", "quantidade"]
         depth = 2
 
 
 def get_total(self, instance):
-    return instance.quantidade * instance.livro.precos
+    return instance.quantidade * instance.produto.precos
 
 
 class CompraSerializer(ModelSerializer):
@@ -25,9 +25,23 @@ class CompraSerializer(ModelSerializer):
         fields = ("id", "usuario", "status", "total", "itens")
 
 
+class CriarEditarItensCompraSerializer(ModelSerializer):
+    class Meta:
+        model = ItensCompra
+        fields = ("produto", "quantidade")
+
+
 class CriarEditarCompraSerializer(ModelSerializer):
-    itens = ItensCompraSerializer(many=True)
+    itens = CriarEditarItensCompraSerializer(many=True)  # Aqui mudou
 
     class Meta:
         model = Compra
         fields = ("usuario", "itens")
+
+    def create(self, validated_data):
+        itens_data = validated_data.pop("itens")
+        compra = Compra.objects.create(**validated_data)
+        for item_data in itens_data:
+            ItensCompra.objects.create(compra=compra, **item_data)
+        compra.save()
+        return compra
