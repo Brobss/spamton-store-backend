@@ -9,8 +9,3 @@ class UsuarioViewSet(ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
     permission_classes = [AllowAnonymousPost]
-    
-    def form_valid(self, form):
-        user = form.save(commit=False)
-        user.set_password(form.cleaned_data.get('password'))
-        user.save()
