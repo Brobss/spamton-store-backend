@@ -41,6 +41,7 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include(usuario_router.urls)),
     path("api/media/", include(uploader_router.urls)),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
