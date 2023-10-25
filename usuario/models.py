@@ -14,7 +14,14 @@ class Usuario(AbstractUser):
     data_nascimento = models.DateField(
         _("Birth Date"), auto_now=False, auto_now_add=False, blank=True, null=True
     )
-    imagem_perfil = models.ImageField(upload_to="images/", blank=True, null=True)
+
+    imagem_perfil = models.ForeignKey(
+        "uploader.Image",
+        on_delete=models.CASCADE,
+        related_name="imagem_perfil",
+        blank=True,
+        null=True,
+    )
 
     USERNAME_FIELD = "email"
 
