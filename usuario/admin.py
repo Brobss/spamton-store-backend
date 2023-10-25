@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from .models import Usuario
+from .models.usuario import Usuario
 from uploader.models import Image
 
 class ImagemAdmin(admin.StackedInline):

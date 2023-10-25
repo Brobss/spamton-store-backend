@@ -4,7 +4,7 @@ from uploader.serializers import ImageSerializer
 
 
 
-from .models import Usuario
+from ..models.usuario import Usuario
 
 
 class UsuarioSerializer(ModelSerializer):

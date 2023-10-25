@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
-from .permissions import AllowAnonymousPost
+from usuario.permissions import AllowAnonymousPost
 
-from .models import Usuario
-from .serializers import UsuarioSerializer
+from usuario.models.usuario import Usuario
+from usuario.serializers.usuario import UsuarioSerializer
 
 
 class UsuarioViewSet(ModelViewSet):
