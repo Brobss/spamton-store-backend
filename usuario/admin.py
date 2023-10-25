@@ -30,9 +30,9 @@ class CustomUserAdmin(UserAdmin):
             _("Personal info"),
             {
                 "fields": (
+                    "imagen_perfil",
                     "first_name",
                     "last_name",
-                    "imagen_perfil",
                 )
             },
         ),
