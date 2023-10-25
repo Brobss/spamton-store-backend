@@ -5,9 +5,7 @@ from django.contrib.auth.models import Group
 
 from ..managers import CustomUserManager
 
-
 class Usuario(AbstractUser):
-    
     imagem_perfil = models.ForeignKey(
         "uploader.Image",
         on_delete=models.CASCADE,
@@ -15,7 +13,6 @@ class Usuario(AbstractUser):
         blank=True,
         null=True,
     )
-    
     username = None
     email = models.EmailField(_("e-mail address"), unique=True)
     cpf = models.CharField(_("CPF"), max_length=11, blank=True, null=True)
@@ -23,17 +20,12 @@ class Usuario(AbstractUser):
     data_nascimento = models.DateField(
         _("Birth Date"), auto_now=False, auto_now_add=False, blank=True, null=True
     )
-
     USERNAME_FIELD = "email"
-
     REQUIRED_FIELDS = []
     EMAIL_FIELD = "email"
-
     objects = CustomUserManager()
-
     def __str__(self):
         return self.email
-
     def save(self, *args, **kwargs):
         created = not self.pk  # Check if the user is being created for the first time
         super().save(*args, **kwargs)
@@ -41,7 +33,6 @@ class Usuario(AbstractUser):
         if created:
             compradores_group, _ = Group.objects.get_or_create(name="compradores")
             self.groups.add(compradores_group)
-
     class Meta:
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"

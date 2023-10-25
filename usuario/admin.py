@@ -9,7 +9,6 @@ from uploader.models import Image
 class ImagemAdmin(admin.StackedInline):
     model = Image
 
-@admin.register(Usuario)
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
@@ -30,7 +29,6 @@ class CustomUserAdmin(UserAdmin):
             _("Personal info"),
             {
                 "fields": (
-                    "imagen_perfil",
                     "first_name",
                     "last_name",
                 )
@@ -59,6 +57,7 @@ class CustomUserAdmin(UserAdmin):
                     "is_active",
                     "groups",
                     "user_permissions",
+                    "imagen_perfil",
                 ),
             },
         ),
@@ -66,3 +65,6 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ("email",)
     ordering = ("email",)
     readonly_fields = ["date_joined", "last_login"]
+
+
+admin.register(Usuario)

@@ -4,7 +4,6 @@ from uploader.serializers import ImageSerializer
 
 from ..models.usuario import Usuario
 
-
 class UsuarioSerializer(ModelSerializer):
     
     imagem_attachment_key = SlugRelatedField(
