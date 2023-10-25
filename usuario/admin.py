@@ -34,13 +34,12 @@ class CustomUserAdmin(UserAdmin):
                 "fields": (
                     "first_name",
                     "last_name",
-                    "imagem_perfil",
                 )
             },
         ),
         (
             _("Personal info"),
-            {"fields": ("cpf", "telefone", "data_nascimento")},
+            {"fields": ("cpf", "telefone", "imagem_perfil", "data_nascimento")},
         ),
         (
             _("Permissions"),
