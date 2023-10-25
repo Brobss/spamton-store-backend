@@ -45,9 +45,3 @@ class Usuario(AbstractUser):
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
         ordering = ["-date_joined"]
-        
-class Salvacao(models.Model):
-    usuario423423432 = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-  
-    def __str__(self):
-        return f"{self.usuario} salvou {self.produto}"
