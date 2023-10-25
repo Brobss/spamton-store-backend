@@ -4,8 +4,10 @@ from django.utils.translation import gettext_lazy as _
 
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from .models import Usuario
+from uploader.models import Image
 
-# O BOCAS PREVALECE
+class ImagemAdmin(admin.StackedInline):
+    model = Image
 
 @admin.register(Usuario)
 class CustomUserAdmin(UserAdmin):
