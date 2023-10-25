@@ -14,12 +14,13 @@ class UsuarioSerializer(ModelSerializer):
     )
     imagem_perfil = ImageSerializer(required=False, read_only=True)
 
+    def create(self, validated_data):
+        return Usuario.objects.create_user(**validated_data)
+
     class Meta:
         model = Usuario
         fields = "__all__"
 
-    def create(self, validated_data):
-        return Usuario.objects.create_user(**validated_data)
 
     
     # def create(self, validated_data):

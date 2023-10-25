@@ -8,8 +8,8 @@ from ..managers import CustomUserManager
 class Usuario(AbstractUser):
     imagem_perfil = models.ForeignKey(
         "uploader.Image",
-        on_delete=models.CASCADE,
-        related_name="imagem_perfil",
+        verbose_name=_("Profile Image"),
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
     )
