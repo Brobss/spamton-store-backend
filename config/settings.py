@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework",
     "django_extensions",
+    "uploader",
     "usuario",
     "produto",
-    "uploader",
 ]
 
 MIDDLEWARE = [
