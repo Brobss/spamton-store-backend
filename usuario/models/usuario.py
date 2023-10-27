@@ -25,7 +25,7 @@ class Usuario(AbstractUser):
         blank=True,
         null=True,
     )
-    
+
     def __str__(self):
         return self.email
     def save(self, *args, **kwargs):
