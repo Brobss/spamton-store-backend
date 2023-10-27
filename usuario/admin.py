@@ -31,7 +31,7 @@ class CustomUserAdmin(UserAdmin):
                 "fields": (
                     "first_name",
                     "last_name",
-                    "foto",
+                    "imagem_perfil",
                 )
             },
         ),

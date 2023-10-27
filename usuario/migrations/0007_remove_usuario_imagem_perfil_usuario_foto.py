@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="usuario",
-            name="foto",
+            name="imagem_perfil",
             field=models.ForeignKey(
                 blank=True,
                 null=True,

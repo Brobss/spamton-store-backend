@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("usuario", "0007_remove_usuario_imagem_perfil_usuario_foto"),
+        ("usuario", "0007_remove_usuario_imagem_perfil_usuario_imagem_perfil"),
     ]
 
     operations = [
         migrations.AlterField(
             model_name="usuario",
-            name="foto",
+            name="imagem_perfil",
             field=models.ImageField(blank=True, null=True, upload_to="images/"),
         ),
     ]
