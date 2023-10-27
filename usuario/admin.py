@@ -3,10 +3,12 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from .models import Usuario
+from .models.usuario import Usuario
+from uploader.models import Image
 
+class ImagemAdmin(admin.StackedInline):
+    model = Image
 
-@admin.register(Usuario)
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
@@ -29,7 +31,7 @@ class CustomUserAdmin(UserAdmin):
                 "fields": (
                     "first_name",
                     "last_name",
-                    "imagem_perfil",
+                    "foto",
                 )
             },
         ),
@@ -63,3 +65,6 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ("email",)
     ordering = ("email",)
     readonly_fields = ["date_joined", "last_login"]
+
+
+admin.register(Usuario)

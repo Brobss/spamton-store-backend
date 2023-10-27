@@ -1,6 +1,6 @@
 from django.db import models
 
-from usuario.models import Usuario
+from usuario.models.usuario import Usuario
 from . import Produto
 
 

@@ -11,6 +11,8 @@ from uploader.views import ImageUploadViewSet
 
 from produto import views
 
+from usuario.views import UsuarioViewSet
+
 from rest_framework.routers import DefaultRouter
 
 from rest_framework_simplejwt.views import (
@@ -33,6 +35,8 @@ router.register(r"categorias", CategoriaViewSet)
 router.register(r"fabricantes", FabricanteViewSet)
 router.register(r"produtos", ProdutoViewSet)
 router.register(r"compras", CompraViewSet)
+router.register(r"usuarios", UsuarioViewSet)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
