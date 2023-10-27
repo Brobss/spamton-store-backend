@@ -6,13 +6,6 @@ from django.contrib.auth.models import Group
 from ..managers import CustomUserManager
 
 class Usuario(AbstractUser):
-    imagem_perfil = models.ForeignKey(
-        "uploader.Image",
-        verbose_name=_("Profile Image"),
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-    )
     username = None
     email = models.EmailField(_("e-mail address"), unique=True)
     cpf = models.CharField(_("CPF"), max_length=11, blank=True, null=True)
@@ -24,6 +17,15 @@ class Usuario(AbstractUser):
     REQUIRED_FIELDS = []
     EMAIL_FIELD = "email"
     objects = CustomUserManager()
+    
+    imagem_perfil = models.ForeignKey(
+        "uploader.Image",
+        verbose_name=_("Profile Image"),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
+    
     def __str__(self):
         return self.email
     def save(self, *args, **kwargs):
