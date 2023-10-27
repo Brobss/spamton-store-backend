@@ -19,7 +19,7 @@ class UsuarioSerializer(ModelSerializer):
 
     class Meta:
         model = Usuario
-        fields = "email, first_name, last_name, password, imagem_perfil"
+        fields = ("email", "first_name", "last_name", "password", "imagem_perfil")
 
 
     
