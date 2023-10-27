@@ -18,13 +18,15 @@ class Usuario(AbstractUser):
     EMAIL_FIELD = "email"
     objects = CustomUserManager()
     
-    foto = models.ForeignKey(
-        "uploader.Image",
-        verbose_name=_("Profile Image"),
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-    )
+    # foto = models.ForeignKey(
+    #     "uploader.Image",
+    #     verbose_name=_("Profile Image"),
+    #     on_delete=models.SET_NULL,
+    #     blank=True,
+    #     null=True,
+    # )
+
+    foto = models.ImageField(upload_to="images/", blank=True, null=True)
 
     def __str__(self):
         return self.email
