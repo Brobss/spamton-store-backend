@@ -18,7 +18,7 @@ class Usuario(AbstractUser):
     EMAIL_FIELD = "email"
     objects = CustomUserManager()
     
-    imagem_perfil = models.ForeignKey(
+    foto = models.ForeignKey(
         "uploader.Image",
         verbose_name=_("Profile Image"),
         on_delete=models.SET_NULL,
