@@ -19,7 +19,7 @@ class UsuarioSerializer(ModelSerializer):
 
     class Meta:
         model = Usuario
-        fields = "__all__"
+        fields = "email, username, password, imagem_perfil"
 
 
     
