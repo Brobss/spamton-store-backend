@@ -32,7 +32,6 @@ class CustomUserAdmin(UserAdmin):
                     "first_name",
                     "last_name",
                     "imagem_perfil",
-                    "imagem_perfil_attachment_key",
                 )
             },
         ),
