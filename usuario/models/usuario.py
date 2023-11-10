@@ -17,16 +17,16 @@ class Usuario(AbstractUser):
     REQUIRED_FIELDS = []
     EMAIL_FIELD = "email"
     objects = CustomUserManager()
-    
-    # imagem_perfil = models.ForeignKey(
-    #     "uploader.Image",
-    #     verbose_name=_("Profile Image"),
-    #     on_delete=models.SET_NULL,
-    #     blank=True,
-    #     null=True,
-    # )
 
-    imagem_perfil = models.ImageField(upload_to="images/", blank=True, null=True)
+    imagem_perfil = models.ForeignKey(
+        "uploader.Image",
+        verbose_name=_("Profile Image"),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
+
+    # imagem_perfil = models.ImageField(upload_to="images/", blank=True, null=True)
 
     def __str__(self):
         return self.email
