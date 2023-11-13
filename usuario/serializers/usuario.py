@@ -16,6 +16,9 @@ class UsuarioSerializer(ModelSerializer):
 
     def create(self, validated_data):
         return Usuario.objects.create_user(**validated_data)
+    
+    def get_is_staff(self, obj):
+        return obj.is_staff
 
     class Meta:
         model = Usuario
